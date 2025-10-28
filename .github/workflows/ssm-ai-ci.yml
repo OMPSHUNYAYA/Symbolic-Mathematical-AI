@@ -1,0 +1,29 @@
+name: ssm-ai-ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run quickstart (smoke)
+        run: |
+          python ssm_ai_quickstart.py
+
+      - name: Run verify and assert PASS
+        run: |
+          python ssm_ai_verify.py > verify.log
+          echo "----- verify.log -----"
+          cat verify.log
+          grep "overall: PASS" verify.log

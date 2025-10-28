@@ -1,0 +1,63 @@
+SSM-AI — Getting Started (ASCII)
+
+Canonicals
+  phi((m,a)) = m
+  a_c := clamp(a, -1+eps_a, +1-eps_a)
+  u := atanh(a_c) ; a := tanh(u)
+  a_out := tanh( (SUM w*atanh(a_i)) / max(SUM w, eps_w) )
+  RSI := tanh( (V_out - U_in) / max(W_in, eps_w) )
+
+What this bundle does
+  Observation-only lanes beside your classical m. Classical values are never edited by SSM-AI: phi((m,a)) = m.
+
+Prerequisites
+  • Python 3.8+ in PATH
+  • No extra libs required for the demos
+
+Folder quick tour
+  • ssm_ai_quickstart.py   ← end-to-end demo (lens → align → fuse → RSI → gate → band)
+  • ssm_ai_verify.py       ← golden vectors and invariance checks
+  • vendor_n4_to_csv.py    ← (optional) converts a simple vendor sheet to clean CSV
+  • docs\*.pdf             ← spec and brief
+
+Run a DEMO (no inputs)
+  Windows:
+    python ssm_ai_quickstart.py
+  macOS / Linux:
+    python3 ssm_ai_quickstart.py
+
+  Expect console output with RSI, RSI_env, bands, plus a fuse sanity value:
+    a_out ≈ 0.291313 from U=0.6, W=2 via a_out := tanh(U/max(W, eps_w))
+
+Verify math invariants (golden vectors)
+  Windows:
+    python ssm_ai_verify.py
+  macOS / Linux:
+    python3 ssm_ai_verify.py
+
+  Expected:
+    clamp_roundtrip: PASS
+    fuse_invariance: PASS
+    lane_mul_div_M2: PASS
+    chooser: PASS
+    overall: PASS
+
+Optional: convert a vendor sheet to CSV
+  Windows:
+    python vendor_n4_to_csv.py --in N4.txt --out vendor_datasheet_N4.csv
+  macOS / Linux:
+    python3 vendor_n4_to_csv.py --in N4.txt --out vendor_datasheet_N4.csv
+  CSV header:
+    svc,comparison,tokens_saved_pct,retry_drop_pct,latency_saved_pct,unit_cost_saved_pct,RSI_pool_env_delta,weekly_savings_usd
+
+Replay invariants for logs (if you emit CSV later)
+  • a_out == tanh( sum(U) / max(sum(W), eps_w) )
+  • RSI  == tanh( (V_out - U_in) / max(W_in, eps_w) )
+  • phi((m,a)) = m
+  • Zero-evidence: if W_in == 0 → RSI := 0 ; band := "A0"
+
+Defaults (recommended)
+  eps_a = 1e-6
+  eps_w = 1e-12  (use eps_w >= 1e-8 if float32)
+  bands: A++: a>=+0.90 ; A+: +0.60<=a<+0.90 ; A0: -0.60<a<+0.60 ; A-: -0.90<a<=-0.60 ; A--: a<=-0.90
+  gate modes: "mul" (RSI_env := g_t * RSI) or "u_scale" (RSI_env := tanh(g_t * atanh(RSI)))

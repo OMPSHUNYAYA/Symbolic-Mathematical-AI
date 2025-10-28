@@ -36,6 +36,11 @@ It is observation-only, order-invariant, and reproducible (SHA-256), designed to
 
 **N4 vendor sheet -> CSV helper (PY):** [Preview](https://github.com/OMPSHUNYAYA/Symbolic-Mathematical-AI/blob/main/vendor_n4_to_csv.py) • [Download](https://github.com/OMPSHUNYAYA/Symbolic-Mathematical-AI/raw/main/vendor_n4_to_csv.py)
 
+## Quick try
+
+Quick try: `python ssm_ai_quickstart.py`  
+Verify: `python ssm_ai_verify.py`
+
 ## Technical note (ASCII, one screen)
 
 Canonicals: `phi((m,a)) = m`; `a := clamp(a, -1+eps_a, +1-eps_a)`

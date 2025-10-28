@@ -1,6 +1,6 @@
 # SSM-AI - alignment lane beside AI scores (values unchanged). Order-invariant, reproducible (SHA-256). Observation-only.
 
-![GitHub Release](https://img.shields.io/github/v/release/OMPSHUNYAYA/Symbolic-Mathematical-AI?style=flat&logo=github) ![GitHub Stars](https://img.shields.io/github/stars/OMPSHUNYAYA/Symbolic-Mathematical-AI?style=flat&logo=github) ![License](https://img.shields.io/badge/license-CC%20BY--NC%204.0-blue?style=flat&logo=creative-commons)
+![GitHub Release](https://img.shields.io/github/v/release/OMPSHUNYAYA/Symbolic-Mathematical-AI?style=flat&logo=github) ![GitHub Stars](https://img.shields.io/github/stars/OMPSHUNYAYA/Symbolic-Mathematical-AI?style=flat&logo=github) ![License](https://img.shields.io/badge/license-CC%20BY--NC%204.0-blue?style=flat&logo=creative-commons) ![CI](https://github.com/OMPSHUNYAYA/Symbolic-Mathematical-AI/actions/workflows/ssm-ai-ci.yml/badge.svg)
 
 ## Intro
 

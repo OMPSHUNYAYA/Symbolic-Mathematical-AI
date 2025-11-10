@@ -52,6 +52,16 @@ Defaults: `eps_a=1e-6`, `eps_w=1e-12`
 
 All original AI scores remain unchanged and continue driving decisions; the `a` lane adds stability awareness without altering outcomes.
 
+---
+
+## Semantic Category / Practical Scope
+
+- **Domains:** AI alignment, network observability, data provenance, governance frameworks, safety-state signaling, operational assurance.
+- **Integration surfaces:** HTTP / MQTT / Kafka / REST / streaming telemetry / embedded buses.
+- **Implementation footprint:** Python, Rust, Go, C, browser JavaScript. No protocol rewrites. No vendor lock.
+
+---
+
 ## License
 
 (c) The Authors of Shunyaya Framework and Shunyaya Symbolic Mathematics. Released under CC BY-NC 4.0 (non-commercial, with attribution).

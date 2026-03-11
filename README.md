@@ -6,7 +6,7 @@
 
 ## Intro
 
-Shunyaya Symbolic Mathematical AI (SSM-AI) adds a transparent alignment lane beside the AI scores you already trust, so teams can see stability vs. fragility early without changing the numbers.
+**Shunyaya Symbolic Mathematical AI (SSM-AI)** adds a transparent alignment lane beside the AI scores you already trust, so teams can see stability vs. fragility early without changing the numbers.
 The classical value stays sacred by construction (`phi((m,a)) = m`), while the lane `a` highlights calm versus risk at a glance.
 It is observation-only, order-invariant, and reproducible (SHA-256), designed to drop in with zero retraining or vendor lock-in.
 

@@ -2,11 +2,18 @@
 
 ![GitHub Release](https://img.shields.io/github/v/release/OMPSHUNYAYA/Symbolic-Mathematical-AI?style=flat&logo=github) ![GitHub Stars](https://img.shields.io/github/stars/OMPSHUNYAYA/Symbolic-Mathematical-AI?style=flat&logo=github) ![License](https://img.shields.io/badge/license-CC%20BY--NC%204.0-blue?style=flat&logo=creative-commons) ![CI](https://github.com/OMPSHUNYAYA/Symbolic-Mathematical-AI/actions/workflows/ssm-ai-ci.yml/badge.svg)
 
+---
+
 ## Intro
 
 Shunyaya Symbolic Mathematical AI (SSM-AI) adds a transparent alignment lane beside the AI scores you already trust, so teams can see stability vs. fragility early without changing the numbers.
 The classical value stays sacred by construction (`phi((m,a)) = m`), while the lane `a` highlights calm versus risk at a glance.
 It is observation-only, order-invariant, and reproducible (SHA-256), designed to drop in with zero retraining or vendor lock-in.
+
+**Clarification:** SSM-AI is **not a chatbot, neural network, or machine-learning model**.  
+It is an **observation layer** that adds a deterministic symbolic alignment lane `a` beside existing AI scores while preserving the original value (`phi((m,a)) = m`).
+
+---
 
 ## Why it matters
 
@@ -17,6 +24,8 @@ It is observation-only, order-invariant, and reproducible (SHA-256), designed to
 - Consistent and fair: results do not depend on ordering or batching, which makes comparisons easier across teams and time.
 - Easy to share and audit: a tiny set of defaults and a reproducible knobs fingerprint let anyone reproduce what you see.
 - Low lift to try: one quickstart script and a short checklist are enough to evaluate fit on real workloads.
+
+---
 
 ## Documents (Preview)
 
@@ -36,10 +45,14 @@ It is observation-only, order-invariant, and reproducible (SHA-256), designed to
 
 **N4 vendor sheet -> CSV helper (PY):** [Preview](https://github.com/OMPSHUNYAYA/Symbolic-Mathematical-AI/blob/main/vendor_n4_to_csv.py) • [Download](https://github.com/OMPSHUNYAYA/Symbolic-Mathematical-AI/raw/main/vendor_n4_to_csv.py)
 
+---
+
 ## Quick try
 
 Quick try: `python ssm_ai_quickstart.py`  
 Verify: `python ssm_ai_verify.py`
+
+---
 
 ## Technical note (ASCII, one screen)
 
